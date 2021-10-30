@@ -4,6 +4,8 @@ const handlebars = require("express-handlebars");
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
 
+const PORT = 8080 || process.env.PORT;
+
 //To holding users information 
 const socketsStatus = {};
 
@@ -20,7 +22,7 @@ app.get("/home" , (req , res)=>{
     res.render("index");
 });
 
-http.listen(8080, () => {
+http.listen(PORT, () => {
   console.log("the app is run in port 3000!");
 });
 

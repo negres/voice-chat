@@ -17,7 +17,9 @@ window.onload = (e) => {
   mainFunction(1000);
 };
 
-var socket = io("ws://localhost:8080");
+const PORT = process.env.PORT || 8080;
+
+var socket = io(`ws://localhost:${PORT}`);
 socket.emit("userInformation", userStatus);
 
 
